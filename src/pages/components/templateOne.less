@@ -1,0 +1,65 @@
+.box {
+  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  .left {
+    width: 256px;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: calc(100vh - 50px);
+    background: red;
+    transition: all 0.6s ease;
+    transform: translateX(-256px);
+  }
+  .smScreenRight,
+  .bgScreenRight {
+    transform: translateX(0);
+    transition: all 0.6s ease;
+    width: 100vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .leftShow {
+    transform: translateX(0);
+  }
+  .rightshow {
+    transform: translateX(-256px);
+    width: 100vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .smScreenRight {
+    display: none;
+  }
+  .bgContentBox {
+    width: 992px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .bgBottomBox {
+    width: 100vw;
+    background-color: black;
+    height: 200px;
+    color: wheat;
+    .bottomTop {
+      max-width: 992px;
+      width: '100%';
+      margin: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .smScreenRight {
+      display: block;
+    }
+    .bgScreenRight {
+      display: none;
+    }
+  }
+  @media (max-width: 992px) {
+    .bgContentBox {
+      width: 100%;
+    }
+  }
+}
